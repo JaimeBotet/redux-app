@@ -1,5 +1,16 @@
+const iniState = [
+	{
+		content: 'welcome to miduclass',
+		important: true,
+		id: 1
+	}, {
+		content: "Thanks for assisting to the class",
+		important: false,
+		id: 2
+	}
+]
 
-export const notesReducer = (state = [] , action) => {
+export const noteReducer = (state = iniState , action) => {
 	switch(action.type){
 		case '@notes/created': 
 			return [...state, action.payload]

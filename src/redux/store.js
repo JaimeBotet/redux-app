@@ -1,6 +1,12 @@
-import { createStore } from 'redux'
-import { notesReducer } from './reducers/notesReducer'
+import { createStore, combineReducers } from 'redux'
+import { noteReducer } from './reducers/noteReducer'
+import { filterReducer } from './reducers/filterReducer'
 
-const store = createStore(notesReducer) 
+const reducer = combineReducers({
+	notes: noteReducer,
+	filter: filterReducer
+})
+
+const store = createStore(reducer) 
 
 export default store;
