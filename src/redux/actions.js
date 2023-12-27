@@ -17,3 +17,10 @@ export const toggleImportanceOf = (id) =>  {
 		payload: {id}
 	}
 }
+
+export const filterChange = (filter) => {
+	return {
+		type: '@filter/set_filter',
+		filter
+	}
+}

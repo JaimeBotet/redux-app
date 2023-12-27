@@ -1,0 +1,14 @@
+{
+	"notes": [
+		{
+			"content": "welcome to miduclass",
+			"important": true,
+			"id": 1
+		}, {
+			"content": "Thanks for assisting to the class",
+			"important": false,
+			"id": 2
+		}
+	],
+	"filter" : "ALL"
+}

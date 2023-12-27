@@ -2,8 +2,17 @@ import { useSelector, useDispatch } from "react-redux"
 import { toggleImportanceOf } from "../redux/actions" 
 
 export default function Notes() {
-	const notes = useSelector( state => state.notes )
 	const dispatch = useDispatch()
+
+	const notes = useSelector( state => {
+		if(state.filter === 'ALL') {
+			return state.notes
+		} else {
+			return state.filter === "IMPORTANT" 
+				? state.notes.filter( note => note.important)
+				: state.notes.filter( note => !note.important)
+		}
+	} )
 
 	const toggleImportant = (id) => {
 		dispatch(toggleImportanceOf(id))
