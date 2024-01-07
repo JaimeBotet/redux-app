@@ -5,10 +5,9 @@
 			"important": true,
 			"id": 1
 		}, {
-			"content": "Thanks for assisting to the class",
+			"content": "Thanks for assisting to the class! You are 1 step closer to achieving your goals!",
 			"important": false,
 			"id": 2
 		}
-	],
-	"filter" : "ALL"
+	]
 }

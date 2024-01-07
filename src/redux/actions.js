@@ -24,3 +24,10 @@ export const filterChange = (filter) => {
 		filter
 	}
 }
+
+export const initNotes = (notes) => {
+	return {
+		type: '@notes/init',
+		payload: notes
+	}
+}

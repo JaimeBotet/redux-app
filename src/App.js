@@ -2,9 +2,17 @@ import { useDispatch } from 'react-redux';
 import NewNote from './components/NewNote';
 import Notes from './components/Notes'
 import { filterChange } from './redux/actions';
+import { useEffect } from 'react';
+import { getAll } from './services/notes';
+import { initNotes } from './redux/actions';
 
 const App = () => {
 	const dispatch = useDispatch();
+	useEffect(() => {
+		getAll().then( notes => {
+			dispatch(initNotes(notes))
+		})
+	}, [dispatch])
 
 	return (
 		<div>
