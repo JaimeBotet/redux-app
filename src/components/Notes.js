@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { toggleImportanceOf } from "../redux/actions" 
+import { actionToggleImportanceOf } from "../redux/actions" 
 
 export default function Notes() {
 	const dispatch = useDispatch()
@@ -15,7 +15,7 @@ export default function Notes() {
 	} )
 
 	const toggleImportant = (id) => {
-		dispatch(toggleImportanceOf(id))
+		dispatch(actionToggleImportanceOf(id))
 	}
 
 	return (

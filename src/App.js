@@ -1,17 +1,13 @@
 import { useDispatch } from 'react-redux';
 import NewNote from './components/NewNote';
 import Notes from './components/Notes'
-import { filterChange } from './redux/actions';
 import { useEffect } from 'react';
-import { getAll } from './services/notes';
-import { initNotes } from './redux/actions';
+import { actionInitNotes, actionFilterChange } from './redux/actions';
 
 const App = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
-		getAll().then( notes => {
-			dispatch(initNotes(notes))
-		})
+		dispatch(actionInitNotes())
 	}, [dispatch])
 
 	return (
@@ -19,13 +15,13 @@ const App = () => {
 			<NewNote />
 			<div>
 				all
-				<input type='radio' name='filter' onChange={() => dispatch(filterChange('ALL'))} />
+				<input type='radio' name='filter' onChange={() => dispatch(actionFilterChange('ALL'))} />
 
 				important
-				<input type='radio' name='filter' onChange={() => dispatch(filterChange('IMPORTANT'))} />
+				<input type='radio' name='filter' onChange={() => dispatch(actionFilterChange('IMPORTANT'))} />
 
 				not important
-				<input type='radio' name='filter' onChange={() => dispatch(filterChange('NO_IMPORTANT'))} />
+				<input type='radio' name='filter' onChange={() => dispatch(actionFilterChange('NO_IMPORTANT'))} />
 			</div>
 			<Notes />
 		</div>

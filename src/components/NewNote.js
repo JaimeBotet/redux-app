@@ -1,15 +1,15 @@
 import { useDispatch } from 'react-redux';
-import { createNote } from '../redux/actions'
+import { actionCreateNote } from '../redux/actions'
 
 export default function NewNote() {
 	const dispatch = useDispatch()
-	const addNote = (event) => {
+	const addNote = async (event) => {
 		event.preventDefault()
 
 		const {target} = event;
 		const content = target.note.value
 		target.note.value = ''
-		dispatch(createNote(content))
+		dispatch(actionCreateNote(content))
 	}
 
 	return (
